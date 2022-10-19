@@ -1,0 +1,5 @@
+1. Kód je sepsaný.
+2. Kód je zdokumentován.
+3. Revize kódu je zhodnocena.
+4. Verze byla vytvořena a nasazena k testovacímu prostředí.
+5. Testování proběhlo.
