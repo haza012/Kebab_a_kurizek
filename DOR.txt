@@ -1,9 +1,9 @@
 Definition of Ready
 1. Zákaznický příběh je definovaný a napsaný
 2. Příběh odkazuje na zdrojový dokument
-3. Definováná kritéria přijetí
-4. Zjištěné závislotsti
-5. Odhadnutá složitost
-6. Identifikovaná výkonnostní kritéria
+3. Definována kritéria přijetí
+4. Zjištěny závislotsti
+5. Odhadnuta složitost
+6. Identifikována výkonnostní kritéria
 7. Určena osoba, která odsouhlasí zákaznický příběh
 8. Tým má dobrou představu o tom, jak bude vypadat zákaznický příběh
