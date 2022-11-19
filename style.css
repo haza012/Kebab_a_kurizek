@@ -1,0 +1,23 @@
+body{
+	
+background: ##FDF6EE;
+font-family: Yu GOTHIC;
+font-size: 36px;
+}
+
+#frm{
+
+	border: solid gray: 1px;
+	width: 20%;
+	border-radius: 5px;
+	margin: 100px 5px;
+	background: white;
+	padding: 50px;
+}
+
+#btn{
+	color: #FFFFFF;
+	background: #6DB7F7;
+	padding: 5px;
+	margin-left:69%;
+}
