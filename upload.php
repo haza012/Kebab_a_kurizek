@@ -20,9 +20,9 @@
  
 <?php 
 $localhost = "localhost"; #localhost
-$dbusername = "root"; #username of phpmyadmin
+$dbusername = "haza01"; #username of phpmyadmin
 $dbpassword = "Tis*763109";  #password of phpmyadmin
-$dbname = "";  #database name
+$dbname = "haza01";  #database name
  
 #connection string
 $conn = mysqli_connect($localhost,$dbusername,$dbpassword,$dbname);
