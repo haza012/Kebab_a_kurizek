@@ -35,7 +35,7 @@
   <body>
     <?php
     require("connect.php");
-                    echo "článek - $_GET[nazev]";
+                    echo "<h3>Název článku - $_GET[nazev]</h3>";
                     $sql = "SELECT * FROM VerzeClanku WHERE idClanku = '$_GET[id]'";
                     $vysledek = mysqli_query($spojeni, $sql);
                     $i = 0;
@@ -43,15 +43,28 @@
                     echo "<TR>";
                     echo "<TH>Verze</TH>";
                     echo "<TH>Koncept</TH>";
-                    echo "<TH>Stav</TH>";
+                    echo "<TH>Stav verze</TH>";
                     echo "</TR>";
                     if (mysqli_num_rows($vysledek) > 0){
                         while ($radek = mysqli_fetch_assoc($vysledek)):
                             if (($i % 2) == 1) echo "<TR CLASS=druhy>";
                             else echo "<TR>";
                             echo "<TD>".($i+1)."</TD>";
-                            echo "<TD>".$radek["koncept"]."</TD>";
-                            echo "<TD>".$radek["stav"]."</TD>";
+                            echo "<TD><a href='download.php?id=$radek[id]'>stáhnout</a></TD>";
+                            switch ($radek['stav']){
+                                case 0:
+                                    echo "<TD>Odeslána</TD>";
+                                    break;
+                                case 1:
+                                    echo "<TD>Předána recenznímu řízení</TD>";
+                                    break;
+                                case 2:
+                                    echo "<TD>Přijata</TD>";
+                                    break;
+                                case 3:
+                                    echo "<TD>Zamítnuta</TD>";
+                                    break;
+                            }
                             echo "</TR>";
                             $i = $i + 1;
                         endwhile;

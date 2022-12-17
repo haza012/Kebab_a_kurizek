@@ -20,6 +20,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="generator" content="PSPad editor, www.pspad.com">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title></title>
     <style>
         table, th, td{
@@ -47,6 +49,9 @@
             width: 100px;
             display: inline-block;
         }
+        #odeslat, #registrovat{
+            display: none;
+        }
     </style>
   </head>
   <body>
@@ -55,9 +60,17 @@
           echo "<form method='post'>";
           if($_SESSION["prihlaseni"] == 1) echo "<input id='odhlasit' name='odhlasit' type='submit' value='Odhlásit'>";
           else{
+              echo "<h4>Přihlášení</h4>";
               echo "<input placeholder='login' id='login' name='login' type='text'><br><br>";
               echo "<input placeholder='heslo' id='heslo' name='heslo' type='password'><br><br>";
               echo "<input id='prihlasit' name='prihlasit' type='submit' value='Přihlásit'>";
+              echo "</form>";
+              echo "<h4>Registrace</h4>";
+              echo "<form action='insert.php' method='GET'>";
+              echo "<input placeholder='login' name='login'><br><br>";
+              echo "<input placeholder='heslo' id='heslo2' name='heslo' type='password'><br><br>";
+              echo "<input placeholder='heslo znovu' id='heslo3' name='heslo2' type='password'><br><br>";
+              echo "<input id='registrovat' type=submit name='registrovat' value='Registrovat'>";
           }
           echo "</form>";
       ?>
@@ -72,7 +85,6 @@
                     echo "uživatel";
                     break;
                 case 1:
-                    echo "autor";
                     include 'autor.php';
                     break;
                 case 2:
@@ -90,3 +102,13 @@
     ?>
   </body>
 </html>
+<script>
+    $('#heslo2,#heslo3').on("keyup", function(){
+        if (document.getElementById('heslo2').value == document.getElementById('heslo3').value){
+            $("#registrovat").css("display","block");
+        }
+        else{
+            $("#registrovat").css("display","none");
+        }
+    });
+</script>

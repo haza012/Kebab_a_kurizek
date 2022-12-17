@@ -20,7 +20,7 @@
                             echo "<TD>".$radek["id"]."</TD>";
                             echo "<TD>".$radek["login"]."</TD>";
                             echo "<TD>".$radek["heslo"]."</TD>";
-                            switch ($radek[opravneni]){
+                            switch ($radek['opravneni']){
                                 case 0:
                                     echo "<TD>Uživatel</TD>";
                                     break;
